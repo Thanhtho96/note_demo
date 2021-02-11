@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SettingActivity">
+
+    <TextView
+        android:id="@+id/text_view_back"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@drawable/ic_arrow_back"
+        android:drawablePadding="@dimen/_7sdp"
+        android:gravity="center_vertical"
+        android:onClick="onClick"
+        android:paddingHorizontal="@dimen/_7sdp"
+        android:text="@string/txt_settings"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/font_size_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick"
+        android:orientation="vertical"
+        android:padding="@dimen/_17sdp"
+        app:layout_constraintTop_toBottomOf="@id/text_view_back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_editor_font_size"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/font_size_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/silver"
+            android:textSize="@dimen/text_size_small"
+            tools:text="Normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/theme_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick"
+        android:orientation="vertical"
+        android:padding="@dimen/_17sdp"
+        app:layout_constraintTop_toBottomOf="@id/font_size_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_theme"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/theme_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/silver"
+            android:textSize="@dimen/text_size_small"
+            tools:text="System default" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/backup_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick"
+        android:orientation="vertical"
+        android:padding="@dimen/_17sdp"
+        app:layout_constraintTop_toBottomOf="@id/theme_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_backup"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_backup_current_notes"
+            android:textColor="@color/silver"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

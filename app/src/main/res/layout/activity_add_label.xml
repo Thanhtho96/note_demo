@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AddLabelActivity">
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingHorizontal="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/image_size_normal"
+            android:layout_height="@dimen/image_size_normal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:src="@drawable/ic_arrow_back" />
+
+        <EditText
+            android:id="@+id/edit_text_add_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/txt_create_label"
+            android:inputType="text"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
+        tools:listitem="@layout/item_label_checkbox" />
+
+    <LinearLayout
+        android:id="@+id/layout_add_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick"
+        android:padding="@dimen/_7sdp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout">
+
+        <ImageButton
+            android:layout_width="@dimen/image_size_normal"
+            android:layout_height="@dimen/image_size_normal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:background="@android:color/transparent"
+            android:onClick="onClick"
+            android:src="@drawable/ic_add_black" />
+
+        <TextView
+            android:id="@+id/create_label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_normal"
+            tools:text="Create ''" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

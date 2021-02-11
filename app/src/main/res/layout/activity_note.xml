@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NoteActivity">
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingHorizontal="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/image_size_normal"
+            android:layout_height="@dimen/image_size_normal"
+            android:layout_gravity="center_vertical"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:src="@drawable/ic_arrow_back" />
+
+        <EditText
+            android:id="@+id/edit_text_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_7sdp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/txt_input_title" />
+
+        <ImageView
+            android:id="@+id/image_view_lock"
+            android:layout_width="@dimen/image_size_normal"
+            android:layout_height="@dimen/image_size_normal"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_lock"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/modified_date"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:textColor="@color/silver"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="23/12/2020" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                style="@style/Widget.MaterialComponents.ChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/modified_date" />
+
+            <jp.wasabeef.richeditor.RichEditor
+                android:id="@+id/richEditor"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chip_group" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/silver"
+        app:layout_constraintBottom_toTopOf="@+id/command_group_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/command_group_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/bold"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_bold_disable" />
+
+            <ImageButton
+                android:id="@+id/italic"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_italic_disable" />
+
+            <ImageButton
+                android:id="@+id/underline"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_underlined_disable" />
+
+            <ImageButton
+                android:id="@+id/strike_through"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_strike_through_disable" />
+
+            <ImageButton
+                android:id="@+id/label"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_label" />
+
+            <ImageButton
+                android:id="@+id/image"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_image" />
+
+            <CheckBox
+                android:id="@+id/checkboxLock"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:button="@drawable/lock_check_box"
+                android:buttonTint="?attr/colorControlNormal" />
+
+            <ImageButton
+                android:id="@+id/notification"
+                android:layout_width="@dimen/image_size_normal"
+                android:layout_height="@dimen/image_size_normal"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:onClick="onClick"
+                android:src="@drawable/ic_bell" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

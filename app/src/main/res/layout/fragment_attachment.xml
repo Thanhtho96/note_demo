@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_7sdp"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp"
+    tools:context=".ui.AttachmentDialogFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:text="@string/txt_attachment"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_huge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/take_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/txt_take_a_picture"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/select_from_storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/txt_select_from_storage"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_normal" />
+</LinearLayout>

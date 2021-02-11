@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.NotificationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.NotificationFragment">
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mcv_dateTextAppearance="?android:attr/textColorPrimary"
+            app:mcv_headerTextAppearance="?android:attr/textColorPrimary"
+            app:mcv_leftArrow="@drawable/ic_arrow_back"
+            app:mcv_rightArrow="@drawable/ic_arrow_forward"
+            app:mcv_weekDayTextAppearance="?android:attr/textColorPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/silver" />
+
+        <TextView
+            android:id="@+id/select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_7sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_normal"
+            tools:text="07/27/2020" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_alarm_of_day" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

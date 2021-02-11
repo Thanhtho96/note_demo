@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <include layout="@layout/nav_header_main" />
+
+                <!--Menu-->
+                <TextView
+                    android:id="@+id/txt_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:drawableStart="@drawable/ic_menu_book"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/txt_notes"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/silver_divider" />
+
+                <TextView
+                    android:id="@+id/txt_create_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:drawableStart="@drawable/ic_add_black"
+                    android:drawableEnd="@drawable/ic_edit"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/txt_create_label"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_label" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/silver_divider" />
+
+                <TextView
+                    android:id="@+id/txt_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:drawableStart="@drawable/ic_bell"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/txt_notification"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/silver_divider" />
+
+                <TextView
+                    android:id="@+id/txt_privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/txt_privacy"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/txt_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:drawableStart="@drawable/ic_settings"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/txt_settings"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
